@@ -105,57 +105,67 @@ function generatePassword() {
   // confirms first
   // var wantsUpper = confirm("do you want uppercase")
   var includeLower = confirm("Include lower case letters?");
-
   var includeUpper = confirm("Include upper case letters?");
-
   var includeNumbers = confirm("Include numbers?");
-
   var includeSpecial = confirm("Include special characters?");
 
-
   // 2. validate the input
-  if (
-    includeLower === false &&
-    includeUpper === false &&
-    includeNumbers === false &&
-    includeSpecial === false
-  ) {
-    alert("At least one type of character must be selected!");
-    return;
-  }
-
+  // if (
+  //   includeLower === false &&
+  //   includeUpper === false &&
+  //   includeNumbers === false &&
+  //   includeSpecial === false
+  // ) {
+  //   alert("At least one type of character must be selected!");
+  //   return;
+  // }
 
   //if statements to create a big array of user choices
   // make confirms for each character type
   // combine all the characters the user picks in to one array
   var charactersSelected = [];
 
+  // if includeLower is true:
+  // charactersSelected = charactersSelected concatenated with lcCharacters
+  if (lcCharacters) {
+    charactersSelected += lcCharacters;
+  }
 
-/* if includeLower is true:
-      charactersSelected = charactersSelected concatenated with lcCharacters
-  
-  if includeUpper is true:
-      charactersSelected = charactersSelected concatenated with ucCharacters
-  
-  if includeNumbers is true:
-      charactersSelected = charactersSelected concatenated with numCharacters
-  
-  if includeSpecial is true:
-      charactersSelected = charactersSelected concatenated with specialCharacters
-*/
+  // if includeUpper is true:
+  //     charactersSelected = charactersSelected concatenated with ucCharacters
+  if (ucCharacters) {
+    charactersSelected += ucCharacters;
+  }
+
+  // if includeNumbers is true:
+  //     charactersSelected = charactersSelected concatenated with numCharacters
+  if (numCharacters) {
+    charactersSelected += numCharacters;
+  }
+
+  // if includeSpecial is true:
+  //  charactersSelected = charactersSelected concatenated with specialCharacters
+  if (specialCharacters) {
+    charactersSelected += specialCharacters
+  }
+
+  // Checking if at least one character type was selected
+  if (charactersSelected === "") {
+    return "Please select at least one character type.";
+
+  }
+
   console.log(charactersSelected);
-// 3. Generate password based on criteria
+  // 3. Generate password based on criteria
   // loop for however long the password length is
   var password = charactersSelected;
 
-  /*for (var i = 0; i < charactersSelected.length; i++) { 
+  /* for (var i = 0; i < charactersSelected.length; i++) { 
       console.log("I am going to see a random password " + charactersSelected[i] + ".");
       var num = Math.floor(Math.random() * charactersSelected.length);
       var char = charactersSelected[num];
       password = password + char;
   } */
-
-
 
   // 4. display password to the page
   return password;
