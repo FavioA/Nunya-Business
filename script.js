@@ -110,15 +110,15 @@ function generatePassword() {
   var includeSpecial = confirm("Include special characters?");
 
   // 2. validate the input
-  // if (
-  //   includeLower === false &&
-  //   includeUpper === false &&
-  //   includeNumbers === false &&
-  //   includeSpecial === false
-  // ) {
-  //   alert("At least one type of character must be selected!");
-  //   return;
-  // }
+  if (
+    includeLower === false &&
+    includeUpper === false &&
+    includeNumbers === false &&
+    includeSpecial === false
+  ) {
+    alert("At least one type of character must be selected!");
+    return;
+  }
 
   //if statements to create a big array of user choices
   // make confirms for each character type
@@ -158,7 +158,7 @@ function generatePassword() {
   console.log(charactersSelected);
   // 3. Generate password based on criteria
   // loop for however long the password length is
-  var password = charactersSelected;
+  var password = "";
 
   for (var i = 0; i < passwordLength; i++) { 
       console.log("I am going to see a random password " + charactersSelected[i] + ".");
@@ -182,15 +182,4 @@ function writePassword() {
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
 
-// generateEL.addEventListener('click', () => {
-//   var length = prompt.value;
-//   // console.log(length);
 
-//   var includeLower = lcCharacters.checked;
-//   var includeUpper = ucCharacters.checked;
-//   var includeNumbers = numCharactersCharacters.checked;
-//   var includeSpecial = specialCharactersCharacters.checked;
-
-//   console.log(includeLower, includeUpper, includeNumbers, includeSpecial)
-
-// })
