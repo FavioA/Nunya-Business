@@ -112,45 +112,51 @@ function generatePassword() {
 
   var includeSpecial = confirm("Include special characters?");
 
-  // if (
-  //   includeLower === false &&
-  //   includeUpper === false &&
-  //   includeNumbers === false &&
-  //   includeSpecial === false
-  // ) {
-  //   alert("At least one type of character must be selected!");
-  //   return;
-  // }
 
-  // var charactersSelected = {
-  //   includeLower: includeLower,
-  //   includeNumbers: includeNumbers,
-  //   includeSpecial: includeSpecial,
-  //   includeUpper: includeUpper,
-  // };
-
-  var charactersSelected = [lcCharacters, ucCharacters, numCharacters, specialCharacters]
-  for (var i = 0; i < charactersSelected.length; i++) { 
-    console.log("I am going to see a random password " + charactersSelected[i] + ".");
-
-    return(charactersSelected)
+  // 2. validate the input
+  if (
+    includeLower === false &&
+    includeUpper === false &&
+    includeNumbers === false &&
+    includeSpecial === false
+  ) {
+    alert("At least one type of character must be selected!");
+    return;
   }
 
-  
-  // function generatePassword(includeLower, includeUpper, includeNumbers, includeSpecial, length);
 
-  
   //if statements to create a big array of user choices
   // make confirms for each character type
   // combine all the characters the user picks in to one array
+  var charactersSelected = [];
 
-  // 2. validate the input
-  // 3. Generate password based on criteria
-  var password = "";
+
+/* if includeLower is true:
+      charactersSelected = charactersSelected concatenated with lcCharacters
+  
+  if includeUpper is true:
+      charactersSelected = charactersSelected concatenated with ucCharacters
+  
+  if includeNumbers is true:
+      charactersSelected = charactersSelected concatenated with numCharacters
+  
+  if includeSpecial is true:
+      charactersSelected = charactersSelected concatenated with specialCharacters
+*/
+  console.log(charactersSelected);
+// 3. Generate password based on criteria
   // loop for however long the password length is
-  var num = Math.floor(Math.random() * lcCharacters.length);
-  var char = lcCharacters[num];
-  password = password + char;
+  var password = charactersSelected;
+
+  /*for (var i = 0; i < charactersSelected.length; i++) { 
+      console.log("I am going to see a random password " + charactersSelected[i] + ".");
+      var num = Math.floor(Math.random() * charactersSelected.length);
+      var char = charactersSelected[num];
+      password = password + char;
+  } */
+
+
+
   // 4. display password to the page
   return password;
 }
