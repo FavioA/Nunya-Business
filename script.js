@@ -127,26 +127,26 @@ function generatePassword() {
 
   // if includeLower is true:
   // charactersSelected = charactersSelected concatenated with lcCharacters
-  if (lcCharacters) {
-    charactersSelected += lcCharacters;
+  if (includeLower) {
+    charactersSelected = charactersSelected.concat(lcCharacters);
   }
 
   // if includeUpper is true:
   //     charactersSelected = charactersSelected concatenated with ucCharacters
-  if (ucCharacters) {
-    charactersSelected += ucCharacters;
+  if (includeUpper) {
+    charactersSelected = charactersSelected.concat(ucCharacters);
   }
 
   // if includeNumbers is true:
   //     charactersSelected = charactersSelected concatenated with numCharacters
-  if (numCharacters) {
-    charactersSelected += numCharacters;
+  if (includeNumbers) {
+    charactersSelected = charactersSelected.concat(numCharacters);
   }
 
   // if includeSpecial is true:
   //  charactersSelected = charactersSelected concatenated with specialCharacters
-  if (specialCharacters) {
-    charactersSelected += specialCharacters
+  if (includeSpecial) {
+    charactersSelected = charactersSelected.concat(specialCharacters);
   }
 
   // Checking if at least one character type was selected
@@ -160,12 +160,12 @@ function generatePassword() {
   // loop for however long the password length is
   var password = charactersSelected;
 
-  /* for (var i = 0; i < charactersSelected.length; i++) { 
+  for (var i = 0; i < passwordLength; i++) { 
       console.log("I am going to see a random password " + charactersSelected[i] + ".");
       var num = Math.floor(Math.random() * charactersSelected.length);
       var char = charactersSelected[num];
       password = password + char;
-  } */
+  }
 
   // 4. display password to the page
   return password;
