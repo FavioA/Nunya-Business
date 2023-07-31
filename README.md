@@ -18,7 +18,7 @@ Password Generator
 > * A website that WHEN the password is generated, THEN the password is written to the page.
 
 ## Link to deployed website 
-This site was built using [GitHub Pages](https://favioa.github.io/Faviolous/).
+This site was built using [GitHub Pages](https://favioa.github.io/Nunya-Business/).
 
 ## Link to GitHub Repo
-[GitHub Repo.](/images/Portfolio-Site-Screenshot.png)
+[GitHub Repo.](https://github.com/FavioA/Nunya-Business.git)
