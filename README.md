@@ -3,20 +3,22 @@ Password Generator
 
 ## This Challenge repository contains the following:
 
-> * A portfolio website that WHEN my portfolio is loadad, THEN it shows my name, a recent photo, and links to sectinos about me, my work, and how I may be contacted.
+> * A website that WHEN the user clicks the button to generate a password, THEN it shows a series of prompts for password criteria.
 >
-> * A portfolio website containing relative URLs that WHEN of the links in the navigation is clicked, THEN the UI scrolls to the corresponding setion on the page.
+> * A website that WHEN oprompted for password criteria, THEN the user selects which criteria to include in the password.
 >
-> * A portfolio website that WHEN the link to the section about my work is clicked, THEN the UI scrolls to a section with the titled images of my applications. 
+> * A website that WHEN prompted for the length of the password, THEN the user can choose a length of at least 8 characters and no more than 128 characters. 
 >
-> * A portfolio website that WHEN my first applicaiton is presented, THEN that application's image is larger that the others.
+> * A website that WHEN asked for character types to include in the password, THEN the user confirms whether or not to include lowercase, uppercase, numeric, and/or special characters.
 >
-> * A portfolio website that WHEN an application's image is clicked, THEN it redirects the user to that deployed application.
+> * A website that WHEN the user answers each prompt, THEN user input should is validated and at least one character type should be selected.
 >
-> * A portfolio website that WHEN the page is resized or viewed on various screen and devices, THEN the user is presented with a responsive layout that adapts to the user's viewport.
-
-## Screenshot ()
-![Screenshot of portfolio website.](/images/Portfolio-Site-Screenshot.png)
+> * A website that WHEN all prompts are answered, THEN a password is generated that matches the selected criteria.
+>
+> * A website that WHEN the password is generated, THEN the password is written to the page.
 
 ## Link to deployed website 
 This site was built using [GitHub Pages](https://favioa.github.io/Faviolous/).
+
+## Link to GitHub Repo
+[GitHub Repo.](/images/Portfolio-Site-Screenshot.png)
