@@ -1,3 +1,4 @@
+// Array of lower case characters, if selected, for password 
 var lcCharacters = [
   "a",
   "b",
@@ -27,6 +28,7 @@ var lcCharacters = [
   "z",
 ];
 
+// // Array of upper case characters, if selected, for password 
 var ucCharacters = [
   "A",
   "B",
@@ -55,8 +57,10 @@ var ucCharacters = [
   "Z",
 ];
 
+// Array of numberic characters, if selected, for password 
 var numCharacters = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
+// Array of specialers, if selected, for password 
 var specialCharacters = [
   "!",
   '"',
@@ -94,40 +98,34 @@ var generateBtn = document.querySelector("#generate");
 function generatePassword() {
   console.log("password button clicked");
 
-  var passwordLength = prompt("How long do you want your password to be?");
+  //Store length of passworded selected by user
+  var passwordLength = parseInt( 
+    prompt("How long do you want your password to be?"));
   console.log(passwordLength);
+
+  // Conditional statement to verify a number has been entered for password length, if not user is alerted
 
   if (Number.isNaN(passwordLength)) {
     alert("Please enter a valid number for password length!");
     return null;
   }
 
+  // Conditional statement to verify user has selected a length that's at least 8 characters long but no more than 128
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Password needs to be 8 characters and 128 or less characters.");
     return;
   }
 
-  // confirms first
-  // var wantsUpper = confirm("do you want uppercase")
+  // Confirms for what kind(s) of characters to include
   var includeLower = confirm("Include lower case letters?");
   var includeUpper = confirm("Include upper case letters?");
   var includeNumbers = confirm("Include numbers?");
   var includeSpecial = confirm("Include special characters?");
 
-  // 2. validate the input
-  // if (
-  //   includeLower === false &&
-  //   includeUpper === false &&
-  //   includeNumbers === false &&
-  //   includeSpecial === false
-  // ) {
-  //   alert("At least one type of character must be selected!");
-  //   return;
-  // }
+  
+ 
 
-  //if statements to create a big array of user choices
-  // make confirms for each character type
-  // combine all the characters the user picks in to one array
+  //if statements to create a big array of user choices to combine later into one array
   var charactersSelected = [];
 
   // if includeLower is true:
@@ -137,19 +135,19 @@ function generatePassword() {
   }
 
   // if includeUpper is true:
-  //     charactersSelected = charactersSelected concatenated with ucCharacters
+  // charactersSelected = charactersSelected concatenated with ucCharacters
   if (includeUpper) {
     charactersSelected = charactersSelected.concat(ucCharacters);
   }
 
   // if includeNumbers is true:
-  //     charactersSelected = charactersSelected concatenated with numCharacters
+  // charactersSelected = charactersSelected concatenated with numCharacters
   if (includeNumbers) {
     charactersSelected = charactersSelected.concat(numCharacters);
   }
 
   // if includeSpecial is true:
-  //  charactersSelected = charactersSelected concatenated with specialCharacters
+  // charactersSelected = charactersSelected concatenated with specialCharacters
   if (includeSpecial) {
     charactersSelected = charactersSelected.concat(specialCharacters);
   }
@@ -161,8 +159,9 @@ function generatePassword() {
 
   }
 
-  console.log(charactersSelected);
-  // 3. Generate password based on criteria
+  // console.log(charactersSelected);
+  
+  // Generate password based on criteria
   // loop for however long the password length is
   var password = "";
 
@@ -173,7 +172,7 @@ function generatePassword() {
       password = password + char;
   }
 
-  // 4. display password to the page
+  // display password to the page
   return password;
 }
 
