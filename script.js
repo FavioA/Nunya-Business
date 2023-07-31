@@ -97,6 +97,11 @@ function generatePassword() {
   var passwordLength = prompt("How long do you want your password to be?");
   console.log(passwordLength);
 
+  if (Number.isNaN(passwordLength)) {
+    alert("Please enter a valid number for password length!");
+    return null;
+  }
+
   if (passwordLength < 8 || passwordLength > 128) {
     alert("Password needs to be 8 characters and 128 or less characters.");
     return;
@@ -110,15 +115,15 @@ function generatePassword() {
   var includeSpecial = confirm("Include special characters?");
 
   // 2. validate the input
-  if (
-    includeLower === false &&
-    includeUpper === false &&
-    includeNumbers === false &&
-    includeSpecial === false
-  ) {
-    alert("At least one type of character must be selected!");
-    return;
-  }
+  // if (
+  //   includeLower === false &&
+  //   includeUpper === false &&
+  //   includeNumbers === false &&
+  //   includeSpecial === false
+  // ) {
+  //   alert("At least one type of character must be selected!");
+  //   return;
+  // }
 
   //if statements to create a big array of user choices
   // make confirms for each character type
@@ -150,7 +155,8 @@ function generatePassword() {
   }
 
   // Checking if at least one character type was selected
-  if (charactersSelected === "") {
+  if (charactersSelected.length === 0) { 
+    alert("At least one type of character must be selected!");
     return "Please select at least one character type.";
 
   }
